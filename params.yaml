@@ -1,0 +1,23 @@
+
+data:
+  train_path: data/raw/train.csv
+  later_path: data/raw/later.csv
+  holdout_path: data/raw/holdout_features.csv
+  target: litres_per_day
+
+model:
+  random_state: 42
+  test_size: 0.2
+  candidates:
+    - RandomForest
+    - GradientBoosting
+    - ExtraTrees
+
+monitoring:
+  psi_bins: 10
+  retrain_fraction: 0.70
+  promotion_threshold: 0.10
+
+api:
+  host: 0.0.0.0
+  port: 8000
